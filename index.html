@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BioPlastic Sim — Protein & Mycelium Viewer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://3dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f7fafc;
+      margin: 0;
+      color: #0f172a;
+    }
+    header {
+      background: #219ebc;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .panel {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+      padding: 1rem;
+    }
+    .panel.input-panel {
+      flex: 1 1 280px;
+      max-width: 350px;
+    }
+    .panel.display-panel {
+      flex: 2 1 600px;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: 500;
+      margin-top: 0.5rem;
+      display: block;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-family: inherit;
+    }
+    button {
+      background: #ffb703;
+      color: #023047;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #fb8500;
+      color: white;
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #e2e8f0;
+      margin-bottom: 1rem;
+    }
+    .tab {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      font-weight: 500;
+    }
+    .tab.active {
+      border-bottom: 3px solid #219ebc;
+      color: #219ebc;
+    }
+    .tab-content {
+      display: none;
+      flex: 1;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Fixed viewer panel */
+    #viewer {
+      width: 100%;
+      height: 500px; /* fixed height for proper rendering */
+      border-radius: 6px;
+      background-color: white;
+      overflow: hidden;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    /* Keep results tidy */
+    #results {
+      max-height: 500px;
+      overflow-y: auto;
+      background: #f8fafc;
+      border-radius: 6px;
+      padding: 12px;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 1rem;
+      color: #64748b;
+    }
+    .metric {
+      background: #f1f5f9;
+      padding: 0.5rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    .metric span {
+      font-weight: bold;
+      color: #219ebc;
+    }
+  </style>
+</head>
+<body>
+<header>BioPlastic Sim — Protein & Mycelium Viewer PIXXELRAFT</header>
+<main>
+  <div class="panel input-panel">
+    <label>PDB ID</label>
+    <input id="pdbid" placeholder="e.g. 1CRN" />
+    <button id="loadPdb">Load Structure</button>
+
+    <label>Protein Sequence / FASTA</label>
+    <textarea id="sequence" rows="6" placeholder="Paste sequence or FASTA"></textarea>
+    <button id="analyzeSeq">Analyze Sequence</button>
+  </div>
+
+  <div class="panel display-panel">
+    <div class="tabs">
+      <div class="tab active" data-tab="viewer-tab">3D Viewer</div>
+      <div class="tab" data-tab="results-tab">Analysis Results</div>
+    </div>
+    <div id="viewer-tab" class="tab-content active">
+      <div id="viewer"></div>
+    </div>
+    <div id="results-tab" class="tab-content">
+      <div id="results"></div>
+    </div>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
