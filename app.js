@@ -1,3 +1,4 @@
+/*All the rights of this code belons to Umair*/
 const API_BASE = 'http://localhost:8000';
 
 // Tab switching
@@ -9,7 +10,7 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.getElementById(tab.dataset.tab).classList.add('active');
   });
 });
-
+/*All the rights of this code belons to Umair*/
 // Handle PDB load
 document.getElementById('loadPdb').onclick = async () => {
   const pdbid = document.getElementById('pdbid').value.trim();
@@ -28,7 +29,7 @@ document.getElementById('loadPdb').onclick = async () => {
     setLoading('viewer', false);
   }
 };
-
+/*All the rights of this code belons to Umair*/
 // Handle sequence analysis
 document.getElementById('analyzeSeq').onclick = async () => {
   const seq = document.getElementById('sequence').value.trim();
@@ -67,7 +68,7 @@ function renderViewer(pdbText) {
   gl.zoomTo();
   gl.render();
 }
-
+/*All the rights of this code belons to Umair*/
 // Render sequence analysis results
 function renderResults(data) {
   const container = document.getElementById('results');
@@ -78,7 +79,7 @@ function renderResults(data) {
     `;
   });
 }
-
+/*All the rights of this code belons to Umair*/
 // Switch tab
 function switchTab(tabId) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -86,7 +87,7 @@ function switchTab(tabId) {
   document.querySelector(`.tab[data-tab="${tabId}"]`).classList.add('active');
   document.getElementById(tabId).classList.add('active');
 }
-
+/*All the rights of this code belons to Umair*/
 // Loading & error states
 function setLoading(target, state) {
   const el = target === 'viewer' ? document.getElementById('viewer') : document.getElementById('results');
