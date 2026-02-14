@@ -2,4 +2,3 @@ fastapi
 uvicorn[standard]
 requests
 biopython
-python3
