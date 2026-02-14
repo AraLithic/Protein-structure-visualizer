@@ -1,3 +1,4 @@
+#All the rights to this code belongs to Sayed Umair Ali
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -5,7 +6,7 @@ from Bio.SeqUtils.ProtParam import ProteinAnalysis
 import requests
 
 app = FastAPI()
-
+#All the rights to this code belongs to Sayed Umair Ali
 # Enable CORS so frontend at port 5500 can call backend at port 8000
 app.add_middleware(
     CORSMiddleware,
@@ -16,7 +17,7 @@ app.add_middleware(
 )
 
 RCSB_PDB_URL = "https://files.rcsb.org/download/{pdbid}.pdb"
-
+#All the rights to this code belongs to Sayed Umair Ali
 class SequencePayload(BaseModel):
     seq: str
 
@@ -64,3 +65,4 @@ async def analyze_sequence(payload: SequencePayload):
         'hydrophobic_fraction': hydrophobic_fraction,
         'crosslinkable_proxy': crosslinkable
     }
+#All the rights to this code belongs to Sayed Umair Ali
