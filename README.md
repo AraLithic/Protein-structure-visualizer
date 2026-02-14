@@ -1,4 +1,4 @@
-# Protein-structure-visualizer
+# Protein-structure-visualizer by Umair
 
 ## Protein & Mycelium Bioplastic — Starter
 
