@@ -14,6 +14,7 @@ This document explains how to stop, restart, and run the project locally without
 
 ---
 
+
 # 🛑 How to Stop the Project
 
 If the backend and frontend are running in terminals:
