@@ -15,7 +15,7 @@ This document explains how to stop, restart, and run the project locally without
 ---
 
 
-# 🛑 How to Stop the Project
+#  How to Stop the Project
 
 If the backend and frontend are running in terminals:
 
@@ -34,7 +34,7 @@ Nothing is deleted. Your virtual environment and installed packages remain intac
 
 ---
 
-# 🔁 How to Restart the Project Later
+#  How to Restart the Project Later
 
 ## Step 1 — Navigate to Project Folder
 
@@ -50,7 +50,7 @@ cd ~/Projects/ProtienStrVis
 source .venv/bin/activate
 ```
 
-⚠️ You do NOT need to reinstall requirements unless:
+ You do NOT need to reinstall requirements unless:
 
 * You deleted the `.venv` folder
 * You modified `requirements.txt`
@@ -93,7 +93,7 @@ http://localhost:5500
 
 ---
 
-# 🧠 Important Concept
+#  Important Concept
 
 The `.venv` folder contains all installed dependencies.
 
@@ -109,7 +109,7 @@ pip install -r requirements.txt
 
 ---
 
-# 🚀 Optional: Create Quick Start Script (Backend)
+#  Optional: Create Quick Start Script (Backend)
 
 Create a file named `run_backend.sh`:
 
